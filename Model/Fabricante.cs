@@ -1,6 +1,6 @@
 using System;
 
-
+namespace Model{
     public class Fabricante
     {
         public int id_Fabricante{ get; set; }
@@ -47,3 +47,4 @@ using System;
             return Fabricante;
         }
     }
+}
