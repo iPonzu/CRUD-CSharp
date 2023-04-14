@@ -1,0 +1,45 @@
+# Visual Studio files
+.vs/
+bin/
+obj/
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Oo]bj/
+
+# NuGet packages
+packages/
+*.nupkg
+*.snupkg
+*[Bb]ackup.[Bb]ak
+*.bak
+*.Cache
+*.log
+
+# User-specific files
+*.user
+*.suo
+*.cache
+*.sln.docstates
+*.suo
+*.userprefs
+*.psess
+
+# Build results of an MSBuild project
+[Bb]uild/
+# Visual Studio 2015/2017 cache/options directory
+.vs/config/
+# Uncomment if you have tasks that create the project's static files in wwwroot
+#wwwroot/assets/
+# SQL Server files
+*.mdf
+*.ldf
+
+# Rider files
+.idea/
+*.csproj.user
+*.csproj.nuget.g.props
+*.csproj.nuget.g.targets

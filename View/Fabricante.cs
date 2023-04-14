@@ -24,11 +24,9 @@ namespace View
             Console.WriteLine("Digite o ID do Fabricante: ");
             string idFabricante = Console.ReadLine();
             Console.WriteLine("Digite o ID do usuário: ");
-            string user_id = Console.ReadLine();
-            Console.WriteLine("Digite o tipo do Fabricante: ");
-            string tipo = Console.ReadLine();
+            string nome = Console.ReadLine();
             try{
-                Controller.Fabricante.AlterarFabricante(idFabricante, user_id, tipo);
+                Controller.Fabricante.AlterarFabricante(idFabricante, nome);
                 Console.WriteLine("Fabricante alterado com sucesso!");
             }catch(Exception e) {
                 Console.WriteLine($"Erro ao alterar o Fabricante: {e.Message}");

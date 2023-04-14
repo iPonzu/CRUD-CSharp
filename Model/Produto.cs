@@ -3,10 +3,10 @@ using System;
 namespace Model{
 public class Produto
 {
-    public int id_Produto {get;set;}
-    public string nome_produto {get;set;}
-    public int codProduto {get;set;}
+        private int idConvert;
 
+        public int id_Produto {get;set;}
+    public string nome_produto {get;set;}
     public static List<Produto> Produtos {get;set;} = new List<Produto>();
 
     public Produto(
@@ -16,21 +16,25 @@ public class Produto
     ){
         Id_Produto = id_Produto;
         Nome_produto = nome_produto;
-        CodProduto = codProduto;
 
         Produtos.Add(this);
     }
 
-    public override string ToString()
+        public Produto(int idConvert, string nome_produto)
+        {
+            this.idConvert = idConvert;
+            this.nome_produto = nome_produto;
+        }
+
+        public override string ToString()
     {
-        return $"Id do Produto: {id_Produto}, Nome do produto: {nome_produto}, Código do produto: {codProduto}";
+        return $"Id do Produto: {id_Produto}, Nome do produto: {nome_produto}";
     }
 
-    public static void AlterarProduto(int id_Produto, string nome, int codProduto){
+    public static void AlterarProduto(int id_Produto, string nome){
             Produto Produto = BuscarProduto(id_Produto);
             Produto.id_Produto = id_Produto;
             Produto.nome_produto = nome;
-            Produto.codProduto = codProduto;
         }
 
         public static void ExcluirProduto(int id_Produto){

@@ -8,10 +8,10 @@ namespace View
             Console.WriteLine("Digite o ID do Produto: ");
             string id_Produto = Console.ReadLine();
             Console.WriteLine("Digite o nome do Produto: ");
-            string nome = Console.ReadLine();
+            string nome_produto = Console.ReadLine();
           
             try{
-                Controller.Produto.CadastrarProduto(id_Produto, nome);
+                Controller.Produto.CadastrarProduto(id_Produto, nome_produto);
                 Console.WriteLine("Produto cadastrado com sucesso!");
             }catch(Exception e) {
                 Console.WriteLine($"Erro ao cadastrar o Produto: {e.Message}");
@@ -23,11 +23,9 @@ namespace View
             Console.WriteLine("Digite o ID do Produto: ");
             string id_Produto = Console.ReadLine();
             Console.WriteLine("Digite o ID do usuário: ");
-            string user_id = Console.ReadLine();
-            Console.WriteLine("Digite o tipo do Produto: ");
-            string tipo = Console.ReadLine();
+            string nome_produto = Console.ReadLine();
             try{
-                Controller.Produto.AlterarProduto(id_Produto, user_id, tipo);
+                Controller.Produto.AlterarProduto(id_Produto, nome_produto);
                 Console.WriteLine("Produto alterado com sucesso!");
             }catch(Exception e) {
                 Console.WriteLine($"Erro ao alterar o Produto: {e.Message}");
@@ -47,7 +45,7 @@ namespace View
         }
 
         public static void ListarProdutos(){
-            Console.WriteLine("Listar Perfis");
+            Console.WriteLine("Listar Produtos");
             foreach (Model.Produto Produto in Controller.Produto.ListarProdutos()) {
                 Console.WriteLine(Produto);
             }
