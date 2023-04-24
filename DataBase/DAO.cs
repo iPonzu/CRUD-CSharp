@@ -1,34 +1,17 @@
-using System;
-using System.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+//using MySql.Data.EntityFrameworkCore.Extensions;
+using Model;
 
-public abstract class DAO
+namespace MyDB
 {
-    private static SqlConnection connection;
-
-    public static SqlConnection CreateConnection()
+    public class VerdureiraContext : DbContext
     {
-        try
-        {
-            string connectionString = @"jdbc:mysql://localhost:3306/crudcs;Integrated Security=True";
-            connection = new SqlConnection(connectionString);
-            connection.Open();
-            return connection;
-        }
-        catch (Exception e)
-        {
-            throw new Exception(e.Message);
-        }
-    }
+        public DbSet<Model.Produto> Produtos {get; set;}
 
-    public static void CloseConnection()
-    {
-        try
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            connection.Close();
+            var connectionString = "server=localhost;database=mydb;user=root;password=Wheniparkmyrr_1234";
+            optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
         }
-        catch (Exception e)
-        {
-            throw new Exception(e.Message);
-        }
-    }
+    }    
 }
